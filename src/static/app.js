@@ -85,6 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Add functionality to toggle dark mode
+  document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector("header").classList.toggle("dark-mode");
+    document.querySelectorAll(".activity-card").forEach(card => card.classList.toggle("dark-mode"));
+    document.querySelectorAll(".activity-card ul").forEach(list => list.classList.toggle("dark-mode"));
+  });
+
   // Initialize app
   fetchActivities();
 });
